@@ -1,159 +1,229 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-const Header = ({ config }) => {
+const Header = ({ eventData }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
   };
 
+  const navItems = [
+    { id: 'hero', label: 'Home' },
+    { id: 'highlights', label: 'Why Attend' },
+    { id: 'speakers', label: 'Speakers' },
+    { id: 'schedule', label: 'Schedule' },
+    { id: 'location', label: 'Location' },
+    { id: 'registration', label: 'Register' },
+    { id: 'sponsors', label: 'Sponsors' }
+  ];
+
   return (
-    <header style={styles.header}>
-      <div className="container" style={styles.container}>
-        <div style={styles.nav}>
-          <h1 style={styles.logo}>{config.name}</h1>
-          
-          <button 
-            style={styles.menuButton}
+    <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
+      <div className="container">
+        <div className="header-content">
+          <div className="logo">
+            <img src="/img/aws_logo_smile.png" alt="AWS" className="logo-img" />
+            <span className="logo-text">User Route</span>
+          </div>
+
+          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                className="nav-link"
+                onClick={() => scrollToSection(item.id)}
+              >
+                {item.label}
+              </button>
+            ))}
+            <a
+              href={eventData.registrationLink}
+              className="btn btn-primary nav-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register Now
+            </a>
+          </nav>
+
+          <button
+            className="menu-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-
-          <nav style={{...styles.navMenu, ...(isMenuOpen ? styles.navMenuOpen : {})}}>
-            {config.sections.map(section => (
-              <button
-                key={section}
-                style={styles.navLink}
-                onClick={() => scrollToSection(section)}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
-            ))}
-          </nav>
-        </div>
-
-        <div style={styles.hero}>
-          <h2 style={styles.heroTitle}>{config.name}</h2>
-          <p style={styles.heroSubtitle}>{config.description}</p>
-          <p style={styles.heroDate}>{config.date} • {config.city}</p>
-          {config.callToAction && (
-            <a href={config.callToAction.link} className="btn" style={styles.cta}>
-              {config.callToAction.text}
-            </a>
-          )}
         </div>
       </div>
+
+      <style jsx>{`
+        .header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          transition: var(--transition);
+          border-bottom: 1px solid transparent;
+        }
+
+        .header-scrolled {
+          background: rgba(255, 255, 255, 0.98);
+          border-bottom-color: var(--border-color);
+          box-shadow: var(--shadow);
+        }
+
+        .dark-mode .header {
+          background: rgba(26, 26, 26, 0.95);
+        }
+
+        .dark-mode .header-scrolled {
+          background: rgba(26, 26, 26, 0.98);
+        }
+
+        .header-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 0;
+        }
+
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .logo-img {
+          height: 32px;
+          width: auto;
+        }
+
+        .logo-text {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--text-primary);
+        }
+
+        .nav {
+          display: flex;
+          align-items: center;
+          gap: 32px;
+        }
+
+        .nav-link {
+          background: none;
+          border: none;
+          color: var(--text-primary);
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: var(--transition);
+          padding: 8px 0;
+          position: relative;
+        }
+
+        .nav-link:hover {
+          color: var(--aws-orange);
+        }
+
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: var(--aws-orange);
+          transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+          width: 100%;
+        }
+
+        .nav-cta {
+          margin-left: 16px;
+        }
+
+        .menu-toggle {
+          display: none;
+          background: none;
+          border: none;
+          color: var(--text-primary);
+          cursor: pointer;
+          padding: 8px;
+        }
+
+        @media (max-width: 1024px) {
+          .nav {
+            gap: 24px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .menu-toggle {
+            display: block;
+          }
+
+          .nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--background-primary);
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+            border-top: 1px solid var(--border-color);
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+          }
+
+          .nav-open {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+          }
+
+          .nav-link {
+            width: 100%;
+            text-align: left;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+          }
+
+          .nav-link:last-of-type {
+            border-bottom: none;
+          }
+
+          .nav-cta {
+            margin-left: 0;
+            margin-top: 16px;
+          }
+        }
+      `}</style>
     </header>
   );
 };
-
-const styles = {
-  header: {
-    background: 'linear-gradient(135deg, #232F3E 0%, #FF9900 100%)',
-    color: 'white',
-    minHeight: '100vh',
-    position: 'relative',
-  },
-  container: {
-    position: 'relative',
-    zIndex: 2,
-  },
-  nav: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '20px 0',
-  },
-  logo: {
-    fontSize: '24px',
-    fontWeight: 'bold',
-  },
-  menuButton: {
-    display: 'none',
-    background: 'none',
-    border: 'none',
-    color: 'white',
-    cursor: 'pointer',
-    '@media (max-width: 768px)': {
-      display: 'block',
-    },
-  },
-  navMenu: {
-    display: 'flex',
-    gap: '30px',
-    '@media (max-width: 768px)': {
-      position: 'absolute',
-      top: '100%',
-      left: 0,
-      right: 0,
-      background: '#232F3E',
-      flexDirection: 'column',
-      padding: '20px',
-      transform: 'translateY(-100%)',
-      opacity: 0,
-      visibility: 'hidden',
-      transition: 'all 0.3s ease',
-    },
-  },
-  navMenuOpen: {
-    transform: 'translateY(0)',
-    opacity: 1,
-    visibility: 'visible',
-  },
-  navLink: {
-    background: 'none',
-    border: 'none',
-    color: 'white',
-    cursor: 'pointer',
-    fontSize: '16px',
-    padding: '10px 0',
-    transition: 'color 0.3s ease',
-  },
-  hero: {
-    textAlign: 'center',
-    padding: '100px 0',
-  },
-  heroTitle: {
-    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-    marginBottom: '20px',
-    fontWeight: 'bold',
-  },
-  heroSubtitle: {
-    fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)',
-    marginBottom: '10px',
-    opacity: 0.9,
-  },
-  heroDate: {
-    fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-    marginBottom: '40px',
-    opacity: 0.8,
-  },
-  cta: {
-    fontSize: '18px',
-    padding: '15px 30px',
-  },
-};
-
-// Add responsive styles
-const mediaQuery = window.matchMedia('(max-width: 768px)');
-if (mediaQuery.matches) {
-  styles.menuButton.display = 'block';
-  Object.assign(styles.navMenu, {
-    position: 'absolute',
-    top: '100%',
-    left: 0,
-    right: 0,
-    background: '#232F3E',
-    flexDirection: 'column',
-    padding: '20px',
-    transform: 'translateY(-100%)',
-    opacity: 0,
-    visibility: 'hidden',
-    transition: 'all 0.3s ease',
-  });
-}
 
 export default Header;
