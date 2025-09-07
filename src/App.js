@@ -82,9 +82,7 @@ const App = () => {
     ],
 
     sponsors: [
-      { name: "AWS", logo: "/img/aws_logo_smile.png", url: "https://aws.amazon.com", tier: "title" },
-      { name: "Microsoft Azure", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/150px-Microsoft_Azure.svg.png", url: "https://azure.microsoft.com", tier: "platinum" },
-      { name: "Google Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/150px-Google_Cloud_logo.svg.png", url: "https://cloud.google.com", tier: "gold" }
+      { name: "AWS", logo: "/img/aws_logo_smile.png", url: "https://aws.amazon.com", tier: "title" }
     ],
 
     faqs: [
