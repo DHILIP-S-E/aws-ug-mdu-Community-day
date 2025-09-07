@@ -1,0 +1,286 @@
+{
+  "event": {
+    "name": "AWS User Group Madurai",
+    "subtitle": "Cloud Community Day",
+    "date": "2025-10-25",
+    "time": "09:00 AM - 06:00 PM",
+    "venue": "PSNA College of Engineering and Technology",
+    "address": "Kothandaraman Nagar, Dindigul, Tamil Nadu 624622",
+    "city": "Dindigul",
+    "hashtag": "#AWSCommunityMadurai",
+    "description": "Join us for a day of learning, networking, and hands-on experiences with AWS technologies at PSNA College, Dindigul.",
+    "capacity": 200,
+    "registrationLink": "https://register.awsmadurai.com"
+  },
+  
+  "speakers": [
+    {
+      "id": 1,
+      "name": "Priya Sharma",
+      "designation": "Senior Solutions Architect",
+      "company": "AWS",
+      "bio": "Cloud architecture expert with 8+ years of experience in designing scalable solutions for enterprise clients across various industries.",
+      "photo": "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "linkedin": "https://linkedin.com/in/priyasharma",
+      "twitter": "https://twitter.com/priyasharma",
+      "github": "https://github.com/priyasharma",
+      "expertise": ["Cloud Architecture", "Serverless", "Microservices"],
+      "sessions": ["Opening Keynote: The Future of Cloud Computing"]
+    },
+    {
+      "id": 2,
+      "name": "Rajesh Kumar",
+      "designation": "DevOps Engineer",
+      "company": "TechCorp",
+      "bio": "DevOps specialist focusing on CI/CD pipelines and infrastructure automation with extensive experience in AWS services.",
+      "photo": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "linkedin": "https://linkedin.com/in/rajeshkumar",
+      "twitter": "https://twitter.com/rajeshkumar",
+      "github": "https://github.com/rajeshkumar",
+      "expertise": ["DevOps", "CI/CD", "Infrastructure as Code"],
+      "sessions": ["Building Scalable Serverless Applications"]
+    },
+    {
+      "id": 3,
+      "name": "Anitha Raman",
+      "designation": "Data Scientist",
+      "company": "DataTech Solutions",
+      "bio": "ML engineer specializing in AWS AI/ML services and data pipeline optimization with focus on real-world implementations.",
+      "photo": "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "linkedin": "https://linkedin.com/in/anitharaman",
+      "twitter": "https://twitter.com/anitharaman",
+      "github": "https://github.com/anitharaman",
+      "expertise": ["Machine Learning", "Data Analytics", "AI Services"],
+      "sessions": ["AI/ML on AWS: From Concept to Production"]
+    },
+    {
+      "id": 4,
+      "name": "Vikram Patel",
+      "designation": "Cloud Security Architect",
+      "company": "SecureCloud Inc",
+      "bio": "Security expert with deep knowledge of AWS security services and compliance frameworks for enterprise environments.",
+      "photo": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "linkedin": "https://linkedin.com/in/vikrampatel",
+      "twitter": "https://twitter.com/vikrampatel",
+      "github": "https://github.com/vikrampatel",
+      "expertise": ["Cloud Security", "Compliance", "Identity Management"],
+      "sessions": ["AWS Security Best Practices"]
+    }
+  ],
+
+  "schedule": [
+    {
+      "id": 1,
+      "time": "09:00 - 09:30",
+      "title": "Registration & Welcome Coffee",
+      "speaker": "Organizing Team",
+      "description": "Check-in, networking, and welcome refreshments",
+      "type": "break",
+      "location": "Main Lobby"
+    },
+    {
+      "id": 2,
+      "time": "09:30 - 10:15",
+      "title": "Opening Keynote: The Future of Cloud Computing",
+      "speaker": "Priya Sharma",
+      "description": "Exploring emerging trends and innovations in cloud technology, including serverless, edge computing, and AI integration",
+      "type": "keynote",
+      "location": "Main Auditorium"
+    },
+    {
+      "id": 3,
+      "time": "10:15 - 11:00",
+      "title": "Building Scalable Serverless Applications",
+      "speaker": "Rajesh Kumar",
+      "description": "Deep dive into AWS Lambda, API Gateway, and serverless patterns with hands-on examples",
+      "type": "technical",
+      "location": "Main Auditorium"
+    },
+    {
+      "id": 4,
+      "time": "11:00 - 11:15",
+      "title": "Coffee Break",
+      "speaker": "",
+      "description": "Networking and refreshments",
+      "type": "break",
+      "location": "Cafeteria"
+    },
+    {
+      "id": 5,
+      "time": "11:15 - 12:00",
+      "title": "AI/ML on AWS: From Concept to Production",
+      "speaker": "Anitha Raman",
+      "description": "Practical guide to implementing ML solutions using AWS services like SageMaker, Rekognition, and Comprehend",
+      "type": "technical",
+      "location": "Main Auditorium"
+    },
+    {
+      "id": 6,
+      "time": "12:00 - 13:00",
+      "title": "Lunch & Networking",
+      "speaker": "",
+      "description": "Enjoy lunch while networking with fellow attendees and speakers",
+      "type": "break",
+      "location": "Dining Hall"
+    },
+    {
+      "id": 7,
+      "time": "13:00 - 13:45",
+      "title": "AWS Security Best Practices",
+      "speaker": "Vikram Patel",
+      "description": "Comprehensive security strategies for cloud environments including IAM, VPC, and compliance",
+      "type": "technical",
+      "location": "Main Auditorium"
+    },
+    {
+      "id": 8,
+      "time": "13:45 - 14:30",
+      "title": "Panel Discussion: Cloud Transformation Stories",
+      "speaker": "All Speakers",
+      "description": "Real-world experiences and lessons learned from cloud migrations and transformations",
+      "type": "panel",
+      "location": "Main Auditorium"
+    },
+    {
+      "id": 9,
+      "time": "14:30 - 15:00",
+      "title": "Closing Remarks & Prize Distribution",
+      "speaker": "Organizing Team",
+      "description": "Event wrap-up, prizes for quiz winners, and next steps for the community",
+      "type": "closing",
+      "location": "Main Auditorium"
+    }
+  ],
+
+  "sponsors": [
+    {
+      "name": "AWS",
+      "logo": "/img/aws_logo_smile.png",
+      "url": "https://aws.amazon.com",
+      "tier": "title",
+      "description": "Title Sponsor - Amazon Web Services"
+    },
+    {
+      "name": "Microsoft Azure",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/150px-Microsoft_Azure.svg.png",
+      "url": "https://azure.microsoft.com",
+      "tier": "platinum",
+      "description": "Platinum Sponsor - Microsoft Azure"
+    },
+    {
+      "name": "Google Cloud",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/150px-Google_Cloud_logo.svg.png",
+      "url": "https://cloud.google.com",
+      "tier": "gold",
+      "description": "Gold Sponsor - Google Cloud Platform"
+    },
+    {
+      "name": "Docker",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/150px-Docker_%28container_engine%29_logo.svg.png",
+      "url": "https://docker.com",
+      "tier": "silver",
+      "description": "Silver Sponsor - Docker Inc"
+    }
+  ],
+
+  "highlights": [
+    {
+      "icon": "☁️",
+      "title": "Cloud Architecture",
+      "description": "Learn modern cloud architecture patterns and best practices from AWS experts"
+    },
+    {
+      "icon": "🚀",
+      "title": "Serverless Computing",
+      "description": "Dive deep into AWS Lambda, API Gateway, and serverless application patterns"
+    },
+    {
+      "icon": "🤖",
+      "title": "AI/ML Services",
+      "description": "Explore AWS AI/ML services and real-world machine learning implementations"
+    },
+    {
+      "icon": "🔒",
+      "title": "Security & Compliance",
+      "description": "Master AWS security best practices and compliance frameworks"
+    },
+    {
+      "icon": "📊",
+      "title": "Data Analytics",
+      "description": "Harness the power of AWS data analytics and visualization tools"
+    },
+    {
+      "icon": "🌐",
+      "title": "Networking",
+      "description": "Connect with cloud professionals and industry leaders in Tamil Nadu"
+    }
+  ],
+
+  "faqs": [
+    {
+      "question": "What is the event format?",
+      "answer": "This is a full-day in-person event featuring keynotes, technical sessions, panel discussions, and networking opportunities. All sessions will be conducted in English with interactive Q&A segments."
+    },
+    {
+      "question": "Is there a registration fee?",
+      "answer": "No, this event is completely free for all attendees. However, registration is mandatory due to limited seating capacity of 200 attendees."
+    },
+    {
+      "question": "What should I bring?",
+      "answer": "Bring your laptop, business cards, and enthusiasm to learn! We'll provide all materials, refreshments, lunch, and event swag. Don't forget to bring your QR code ticket for entry."
+    },
+    {
+      "question": "Will sessions be recorded?",
+      "answer": "Yes, all technical sessions will be recorded and made available to registered attendees within 48 hours via email. The recordings will be accessible for 30 days."
+    },
+    {
+      "question": "Is there parking available?",
+      "answer": "Yes, PSNA College provides complimentary parking for all attendees. Additional street parking is also available. The venue is wheelchair accessible."
+    },
+    {
+      "question": "Can I get certificates?",
+      "answer": "Yes, all attendees will receive digital certificates of participation. These can be added to your LinkedIn profile and will be sent via email after the event."
+    },
+    {
+      "question": "What about food and refreshments?",
+      "answer": "We provide welcome coffee, lunch, and evening snacks. Please mention any dietary restrictions during registration so we can accommodate your needs."
+    },
+    {
+      "question": "How do I network with other attendees?",
+      "answer": "We have dedicated networking sessions during breaks and lunch. You'll also receive networking cards with QR codes to easily connect with other attendees on LinkedIn."
+    }
+  ],
+
+  "organizers": {
+    "primary": "AWS User Group Madurai",
+    "contact": {
+      "email": "info@awsmadurai.com",
+      "phone": "+91 98765 43210",
+      "website": "https://awsmadurai.com"
+    },
+    "social": {
+      "twitter": "https://twitter.com/awsmadurai",
+      "linkedin": "https://linkedin.com/company/aws-user-group-madurai",
+      "github": "https://github.com/aws-madurai"
+    }
+  },
+
+  "venue": {
+    "name": "PSNA College of Engineering and Technology",
+    "address": "Kothandaraman Nagar, Dindigul, Tamil Nadu 624622",
+    "coordinates": {
+      "lat": 10.3673,
+      "lng": 77.9803
+    },
+    "facilities": [
+      "Free WiFi",
+      "Air Conditioned Auditorium",
+      "Wheelchair Accessible",
+      "Free Parking",
+      "Cafeteria",
+      "Audio/Visual Equipment"
+    ],
+    "capacity": 200,
+    "directions": "The college is located on the Dindigul-Trichy Highway, easily accessible by bus and car. Dindigul Railway Station is 15km away."
+  }
+}
